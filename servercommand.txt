@@ -1,5 +1,5 @@
-cd 2006Scape/"2006Scape Server" && export PATH=$PATH:~/maven/apache-maven-3.8.6/bin && java -cp "target/server-1.0-jar-with-dependencies.jar" com.rs2.GameEngine
+cd third_party/2006scape/"2006Scape Server" && export PATH=$PATH:~/maven/apache-maven-3.8.6/bin && java -cp "target/server-1.0-jar-with-dependencies.jar" com.rs2.GameEngine
 
-cd 2006Scape/"2006Scape Client" && java -jar target/client-1.0-jar-with-dependencies.jar -s localhost
+cd third_party/2006scape/"2006Scape Client" && java -jar target/client-1.0-jar-with-dependencies.jar -s localhost
 
-cd 2006Scape/"2006Scape Server" && export PATH=$PATH:~/maven/apache-maven-3.8.6/bin && mvn -B clean install
+cd third_party/2006scape/"2006Scape Server" && export PATH=$PATH:~/maven/apache-maven-3.8.6/bin && mvn -B clean install

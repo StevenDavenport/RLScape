@@ -1,7 +1,11 @@
 import argparse
+import os
+import sys
 
 from stable_baselines3 import PPO
 from stable_baselines3.common.vec_env import DummyVecEnv, VecTransposeImage
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
 
 import rl_scape
 
@@ -23,7 +27,7 @@ def make_env(name, render_scale=1, render_fps=30):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--name", default="agent")
-    parser.add_argument("--model-path", default="models/ppo_rlscape")
+    parser.add_argument("--model-path", default="experiments/checkpoints/ppo_rlscape")
     parser.add_argument("--steps", type=int, default=10_000)
     parser.add_argument("--render-scale", type=int, default=1)
     parser.add_argument("--render-fps", type=int, default=30)

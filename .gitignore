@@ -1,5 +1,6 @@
 # RL training artifacts
-rl-scape/models/
+experiments/checkpoints/
+experiments/runs/
 
 # Python cache/build artifacts
 **/__pycache__/

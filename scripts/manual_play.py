@@ -6,6 +6,8 @@ import time
 import numpy as np
 import pygame
 
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
+
 from rl_scape.bridge import RLBridgeClient
 from rl_scape.launcher import RLScapeLauncher
 
@@ -64,9 +66,9 @@ def _compute_reward(prev_state, state, action_type):
 
 
 def _default_paths():
-    base = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-    server_dir = os.path.join(base, "2006Scape", "2006Scape Server")
-    client_dir = os.path.join(base, "2006Scape", "2006Scape Client")
+    base = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    server_dir = os.path.join(base, "third_party", "2006scape", "2006Scape Server")
+    client_dir = os.path.join(base, "third_party", "2006scape", "2006Scape Client")
     java_home = os.environ.get("JAVA_HOME", "/home/staff/steven/local/jdk8/jdk8u482-b08")
     return server_dir, client_dir, java_home
 

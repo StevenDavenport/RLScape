@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "rl-scape"
 version = "0.0.1"
 description = "Gymnasium wrapper for a headless 2006Scape client"
-readme = "README.md"
+readme = "docs/rl_scape.md"
 requires-python = ">=3.9"
 dependencies = [
   "gymnasium>=0.29",
@@ -17,4 +17,5 @@ dependencies = [
 Homepage = "https://example.com"
 
 [tool.setuptools]
+package-dir = {"" = "src"}
 packages = ["rl_scape"]

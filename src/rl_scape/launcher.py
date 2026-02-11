@@ -14,8 +14,8 @@ DEFAULT_PASSWORD = "rl"
 
 def _default_paths():
     base = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-    server_dir = os.path.join(base, "2006Scape", "2006Scape Server")
-    client_dir = os.path.join(base, "2006Scape", "2006Scape Client")
+    server_dir = os.path.join(base, "third_party", "2006scape", "2006Scape Server")
+    client_dir = os.path.join(base, "third_party", "2006scape", "2006Scape Client")
     java_home = _env_or("/home/staff/steven/local/jdk8/jdk8u482-b08", "RL_SCAPE_JAVA_HOME")
     mvn_path = _env_or("/home/staff/steven/maven/apache-maven-3.8.6/bin/mvn", "RL_SCAPE_MVN")
     return server_dir, client_dir, java_home

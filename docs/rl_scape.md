@@ -11,7 +11,7 @@ Minimal Gymnasium wrapper for a headless 2006Scape client.
 ### Start headless client
 
 ```bash
-java -jar "../2006Scape/2006Scape Client/target/client-1.0-jar-with-dependencies.jar" \
+java -jar "../third_party/2006scape/2006Scape Client/target/client-1.0-jar-with-dependencies.jar" \
   -headless -rl -rl-port 5656 -local -u agent -p agent
 ```
 
@@ -37,8 +37,8 @@ env = RLScapeEnv(username="Agent2")
 Environment variables for defaults:
 
 ```bash
-export RL_SCAPE_SERVER_DIR="/home/staff/steven/RuneScape/2006Scape/2006Scape Server"
-export RL_SCAPE_CLIENT_DIR="/home/staff/steven/RuneScape/2006Scape/2006Scape Client"
+export RL_SCAPE_SERVER_DIR="/home/staff/steven/RLScape/third_party/2006scape/2006Scape Server"
+export RL_SCAPE_CLIENT_DIR="/home/staff/steven/RLScape/third_party/2006scape/2006Scape Client"
 export RL_SCAPE_JAVA_HOME="/home/staff/steven/local/jdk8/jdk8u482-b08"
 export RL_SCAPE_USERNAME="Agent2"
 ```
@@ -60,7 +60,7 @@ pip install pygame
 Run:
 
 ```bash
-python examples/manual_play.py 127.0.0.1 5656 1
+python scripts/manual_play.py 127.0.0.1 5656 1
 ```
 
 Arguments: `host port scale` (scale is an integer multiplier for window size).
@@ -70,26 +70,26 @@ Arguments: `host port scale` (scale is an integer multiplier for window size).
 Quick start (auto-launches by default, auto-detects paths):
 
 ```bash
-python examples/manual_play.py
+python scripts/manual_play.py
 ```
 
 Optional explicit paths:
 
 ```bash
-python examples/manual_play.py --launch \
-  "/home/staff/steven/RuneScape/2006Scape/2006Scape Server" \
-  "/home/staff/steven/RuneScape/2006Scape/2006Scape Client" \
+python scripts/manual_play.py --launch \
+  "/home/staff/steven/RLScape/third_party/2006scape/2006Scape Server" \
+  "/home/staff/steven/RLScape/third_party/2006scape/2006Scape Client" \
   "/home/staff/steven/local/jdk8/jdk8u482-b08"
 ```
 
 Choose account name:
 
 ```bash
-python examples/manual_play.py --name Agent2
+python scripts/manual_play.py --name Agent2
 ```
 
 To connect to an already running server/client:
 
 ```bash
-python examples/manual_play.py --no-launch 127.0.0.1 5656 1
+python scripts/manual_play.py --no-launch 127.0.0.1 5656 1
 ```

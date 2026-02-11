@@ -1,8 +1,11 @@
 import argparse
 import os
+import sys
 
 import numpy as np
 import pygame
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
 
 import rl_scape
 
@@ -30,7 +33,7 @@ def main():
     )
     parser.add_argument("--warmup-steps", type=int, default=1200)
     parser.add_argument("--max-steps", type=int, default=4000)
-    parser.add_argument("--out-dir", default="frames_out")
+    parser.add_argument("--out-dir", default="assets/sample_frames")
     args = parser.parse_args()
 
     sizes = _parse_sizes(args.sizes)

@@ -1,12 +1,15 @@
 import argparse
 import csv
 import os
+import sys
 from datetime import datetime
 
 from stable_baselines3 import PPO
 from stable_baselines3.common.callbacks import BaseCallback
 from stable_baselines3.common.monitor import Monitor
 from stable_baselines3.common.vec_env import DummyVecEnv, VecTransposeImage
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
 
 import rl_scape
 
@@ -93,11 +96,15 @@ def main():
     parser.add_argument("--name", default="agent")
     parser.add_argument("--total-steps", type=int, default=100_000)
     parser.add_argument("--seed", type=int, default=0)
-    parser.add_argument("--save-path", default="models/ppo_rlscape")
-    parser.add_argument("--log-dir", default="runs")
+    parser.add_argument("--save-path", default="experiments/checkpoints/ppo_rlscape")
+    parser.add_argument("--log-dir", default="experiments/runs")
     parser.add_argument("--log-every", type=int, default=10_000)
     parser.add_argument("--save-every", type=int, default=100_000)
     args = parser.parse_args()
+    save_dir = os.path.dirname(args.save_path)
+    if save_dir:
+        os.makedirs(save_dir, exist_ok=True)
+    os.makedirs(args.log_dir, exist_ok=True)
 
     print("[startup] building vec env", flush=True)
     vec_env = DummyVecEnv([make_env(args.name)])

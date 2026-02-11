@@ -1,4 +1,7 @@
 import sys
+import os
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
 
 from rl_scape.launcher import RLScapeLauncher
 from rl_scape.bridge import RLBridgeClient
@@ -6,7 +9,7 @@ from rl_scape.bridge import RLBridgeClient
 
 def main():
     if len(sys.argv) < 3:
-        print("Usage: python examples/launch_and_play.py <server_dir> <client_dir> [java_home] [name]")
+        print("Usage: python scripts/launch_and_play.py <server_dir> <client_dir> [java_home] [name]")
         sys.exit(1)
 
     server_dir = sys.argv[1]
@@ -30,7 +33,7 @@ def main():
     client.close()
 
     print("Server + client started. Now run manual play in another terminal:")
-    print("  python examples/manual_play.py 127.0.0.1 5656 1")
+    print("  python scripts/manual_play.py 127.0.0.1 5656 1")
 
     try:
         input("Press Enter to stop server/client... ")
