@@ -8,3 +8,4 @@
 settings.gradle
 *.iml
 server-1.0-jar-with-dependencies.jar
+data/rl_tick.json
