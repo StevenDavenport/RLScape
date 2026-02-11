@@ -1,0 +1,9 @@
+# RL training artifacts
+rl-scape/models/
+
+# Python cache/build artifacts
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
